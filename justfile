@@ -1,4 +1,4 @@
-baseCmd := bun run quartz
+baseCmd := "bun run quartz"
 
 install:
     bun install
