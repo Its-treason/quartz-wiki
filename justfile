@@ -8,4 +8,7 @@ sync:
     {{baseCmd}} sync
 
 serve:
-    {{baseCmd}} build --serve
+    git add --all
+    git commit -m "Sync: {{datetime_utc("%v %r")}}"
+    git pull origin v5
+    git push origin v5
