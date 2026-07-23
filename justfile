@@ -4,10 +4,10 @@ install:
     bun install
     {{baseCmd}} plugin install
 
-sync:
-    {{baseCmd}} sync
-
 serve:
+    {{baseCmd}} build --serve
+
+sync:
     git add --all
     git commit -m "Sync: {{datetime_utc("%v %r")}}"
     git pull origin v5
