@@ -5,3 +5,6 @@ install:
 
 sync:
     {{baseCmd}} sync
+
+serve:
+    {{baseCmd}} build --serve
