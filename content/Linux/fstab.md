@@ -2,21 +2,19 @@
 
 Values are separated by one or more spaces.
 
-|   |   |
-|---|---|
-|Name|Value|
-|Filesystem|The Filesystem / Partition to be mounted.<br><br>Can be a the path to a partition e.g. `/dev/sdb2` or a UUID e.g. `PARTUUID=65561b67-2aee-4c48-8a67-2ea71f5f4ba`|
-|Mount Point|Path to the mountpoint. Should be an existing empty folder. Value `none` can be used for Swap-Partitions|
-|FS-Type|Type of the file system e.g `ext4` or `ntfs`|
-|Options|Mounting options. e.g. `defaults,nofail` -> Default settings, allow booting when mounting the partition fails|
-|Dump|Weather to create a Dump before mounting. `0` don't create dump. `1` create dump|
-|Check Fsck|Check file system before mounting them. `0` don't check anything should be used for Windows / NTFS Partitions. `1` For root file system (Except if type is `btfs`or `XFS`). `2` Check the filesystem before mounting.|
+| Name        | Value                                                                                                                                                                                                                 |
+| ----------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Filesystem  | The Filesystem / Partition to be mounted.<br><br>Can be a the path to a partition e.g. `/dev/sdb2` or a UUID e.g. `PARTUUID=65561b67-2aee-4c48-8a67-2ea71f5f4ba`                                                      |
+| Mount Point | Path to the mountpoint. Should be an existing empty folder. Value `none` can be used for Swap-Partitions                                                                                                              |
+| FS-Type     | Type of the file system e.g `ext4` or `ntfs`                                                                                                                                                                          |
+| Options     | Mounting options. e.g. `defaults,nofail` -> Default settings, allow booting when mounting the partition fails                                                                                                         |
+| Dump        | Weather to create a Dump before mounting. `0` don't create dump. `1` create dump                                                                                                                                      |
+| Check Fsck  | Check file system before mounting them. `0` don't check anything should be used for Windows / NTFS Partitions. `1` For root file system (Except if type is `btfs`or `XFS`). `2` Check the filesystem before mounting. |
 
 Example `fstab` file:
 
-# This is the default fstab of a rpi with an external harddrive
-
 ```
+# This is the default fstab of a rpi with an external harddrive
 proc            /proc           proc    defaults          0       0
 PARTUUID=0a70b801-01  /boot           vfat    defaults,flush    0       2
 PARTUUID=0a70b801-02  /               ext4    defaults,noatime  0       1
