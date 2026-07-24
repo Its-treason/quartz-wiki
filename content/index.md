@@ -1,6 +1,4 @@
 ---
-title: Welcome to Quartz
+title: Timon's Wiki
 ---
-
-This is a blank Quartz installation.
-See the [documentation](https://quartz.jzhao.xyz) for how to get started.
+Hello there, this is my personal wiki with notes about LInux, Gaming and more.
