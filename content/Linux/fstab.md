@@ -30,17 +30,16 @@ PARTUUID=6b8fd307-ae27-4222-b81c-926eaa800dbc /data ext4 defaults,nofail 0 2
 
 For all list of all options, see: [Ext file system options](https://man.archlinux.org/man/ext4.5#MOUNT_OPTIONS) and [File system independent Options](https://man.archlinux.org/man/mount.8#FILESYSTEM-INDEPENDENT_MOUNT_OPTIONS). Note that changing owner or permissions is only really needed for file system that don't support UNIX permissions, e.g `NTFS`. `ext4` and others will save all permissions.
 
-|   |   |
-|---|---|
-|Name|Description|
-|defaults|Commen Default settings. These include: `rw`,`suid`,`dev`,`exec`,`auto`,`nouser`,`async`,`realtime`|
-|ro|Mount the file system in readonly mode|
-|rw|Mount the file system in Read-Write mode (In defaults)|
-|nofail|Skip the file system if it can't be found. Very usefull for thumb-drives. If this options is not set, the system will wait for the filesystem to be connected before booting|
-|umask=PERMS|Set the Permissions for all files and directories. Important: This is a umask so its disallows permissions e.g. `000` becomes `777`, `022`becomes`755`.|
-|uid=UID|Set the owner of all files. Can be the users UID or username.|
-|gid=GID|Set the owner group of all files. Can be the groups GID or groupname.|
-|windows_names|Only for NTFS: Prevent the creating of files with characters that are not allowed within Windows e.g. `" * < > / \| \` and some|
+| Name          | Description                                                                                                                                                                  |
+| ------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| defaults      | Commen Default settings. These include: `rw`,`suid`,`dev`,`exec`,`auto`,`nouser`,`async`,`realtime`                                                                          |
+| ro            | Mount the file system in readonly mode                                                                                                                                       |
+| rw            | Mount the file system in Read-Write mode (In defaults)                                                                                                                       |
+| nofail        | Skip the file system if it can't be found. Very usefull for thumb-drives. If this options is not set, the system will wait for the filesystem to be connected before booting |
+| umask=PERMS   | Set the Permissions for all files and directories. Important: This is a umask so its disallows permissions e.g. `000` becomes `777`, `022`becomes`755`.                      |
+| uid=UID       | Set the owner of all files. Can be the users UID or username.                                                                                                                |
+| gid=GID       | Set the owner group of all files. Can be the groups GID or groupname.                                                                                                        |
+| windows_names | Only for NTFS: Prevent the creating of files with characters that are not allowed within Windows e.g. `" * < > / \| \` and some                                              |
 
 ## Determine file system types and UUID
 
