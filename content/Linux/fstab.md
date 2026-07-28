@@ -24,6 +24,9 @@ PARTUUID=0a70b801-02  /               ext4    defaults,noatime  0       1
 PARTUUID=6b8fd307-ae27-4222-b81c-926eaa800dbc /data ext4 defaults,nofail 0 2
 # Bind mount example
 /mnt/hdd/Desktop /home/timon/Desktop none bind,nofail 0 0
+
+# SMB Network mount. `sudo dmesg | tail` can help debugging runtime mount errors
+//192.168.178.1/smb /home/smb/smb cifs defaults,nofail,username=smb,password=Smb,uid=1000,gid=1000 0 0
 ```
 
 ## Options
@@ -45,7 +48,9 @@ For all list of all options, see: [Ext file system options](https://man.archlinu
 
 To list all partitions with their UUID execute:
 
-sudo blkid -s UUID
+```
+# blkid -s UUID
+```
 
 ## Validating fstab
 
