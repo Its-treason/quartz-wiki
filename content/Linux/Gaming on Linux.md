@@ -3,6 +3,37 @@ Common Launch Options. With Sway most games don't grab the cursor correctly and 
 PROTON_ENABLE_WAYLAND=1 gamemoderun gamescope --force-grab-cursor -w 2560 -h 1440 -f -r 144 -- %command%
 ```
 
+Justfile for non Steam installs
+```
+export STEAM_COMPAT_CLIENT_INSTALL_PATH := "~/.steam/steam"
+export STEAM_COMPAT_DATA_PATH := justfile_dir()
+export WINEPREFIX := justfile_dir() / "pfx"
+
+proton_bin := home_dir() / ".steam/root/steamapps/common/Proton - Experimental/proton"
+
+run-installer:
+	"{{proton_bin}}" run {{justfile_dir()}}/...Installer.exe
+	
+
+run:
+	"{{proton_bin}}" run "{{justfile_dir()}}/pfx/drive_c/...."
+
+
+# Debug
+run-regedit:
+	wine regedit
+
+run-wine +CMD:
+	wine {{CMD}}
+
+run-winecfg:
+	winecfg
+
+printenv:
+    printenv
+```
+
+
 # Troubleshooting
 ## Long "Processing Vulkan Shaders"
 
