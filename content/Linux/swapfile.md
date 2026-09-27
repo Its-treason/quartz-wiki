@@ -1,4 +1,4 @@
-Create a swapfile
+# Create a swapfile
 
 ```
 # Not needed, but prefer swapfile in root dir
@@ -17,6 +17,14 @@ sudo mkswap swapfile
 # Enable swapfile
 sudo swapon swapfile
 ```
+
+Persist swapfile in `/etc/fstab`
+
+```
+/<Path/to/Swapfile> none swap defaults 0 0
+```
+
+# Setting sawpiness
 
 Set "swapiness". Value between 100 and 0 determining how aggressive ram should be moved to swap.
 - 0 -> Disable swapfile
